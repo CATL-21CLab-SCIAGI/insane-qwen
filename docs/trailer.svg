@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="640" viewBox="0 0 1440 640">
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#080d20"/><stop offset="1" stop-color="#241439"/></linearGradient><linearGradient id="line"><stop stop-color="#76e9db"/><stop offset="1" stop-color="#f89bb8"/></linearGradient></defs>
+<rect width="1440" height="640" rx="30" fill="url(#bg)"/>
+<g fill="none" stroke="#7165ae" stroke-opacity=".18"><path d="M0 450Q400 50 1440 380M0 490Q500 100 1440 420M0 530Q600 150 1440 460M0 570Q700 200 1440 500"/></g>
+<text x="80" y="92" fill="#91a1c9" font-family="sans-serif" font-size="20" letter-spacing="5">ACTIVATION STEERING / QWEN3.5–4B</text>
+<text x="76" y="190" fill="#fff" font-family="sans-serif" font-weight="800" font-size="90">insane-qwen</text>
+<text x="80" y="244" fill="#c5cce3" font-family="sans-serif" font-size="30">Same weights. One neuron. A different voice.</text>
+<rect x="80" y="300" width="570" height="160" rx="20" fill="#111b35" stroke="#76e9db" stroke-opacity=".6"/>
+<text x="110" y="344" fill="#76e9db" font-family="sans-serif" font-size="18" letter-spacing="3">DEFAULT HANDLE</text>
+<text x="110" y="404" fill="#fff" font-family="monospace" font-size="44">L20 / N8888 / +0.6</text>
+<text x="110" y="438" fill="#9caecc" font-family="sans-serif" font-size="18">Additive · fixed reference · zero-based indices</text>
+<g stroke="url(#line)" stroke-width="3" fill="none"><path d="M815 322L950 366L1105 280M815 410L950 366L1105 410M815 498L950 366L1105 498"/></g>
+<g fill="#263652" stroke="#76e9db" stroke-width="3"><circle cx="815" cy="322" r="14"/><circle cx="815" cy="410" r="14"/><circle cx="815" cy="498" r="14"/></g>
+<circle cx="950" cy="366" r="40" fill="#76e9db" opacity=".12"/><circle cx="950" cy="366" r="19" fill="#76e9db"/>
+<g fill="#402940" stroke="#f89bb8" stroke-width="3"><circle cx="1105" cy="280" r="14"/><circle cx="1105" cy="410" r="14"/><circle cx="1105" cy="498" r="14"/></g>
+<text x="885" y="445" fill="#c5cce3" font-family="monospace" font-size="18">down_proj</text>
+<text x="80" y="555" fill="#d8ddf1" font-family="sans-serif" font-size="24">Compare in the browser. Explore on iPhone. Discover offline.</text>
+<text x="80" y="596" fill="#8190b4" font-family="sans-serif" font-size="17">Research prototype · reproducible interventions · private Tailscale access</text>
+</svg>

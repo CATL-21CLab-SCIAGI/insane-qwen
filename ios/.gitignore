@@ -1,0 +1,9 @@
+Build/
+.build/
+.swiftpm/
+*.xcuserstate
+xcuserdata/
+.DS_Store
+.env
+*.xcresult/
+connection-bootstrap.json

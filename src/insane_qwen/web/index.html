@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>insane-qwen</title>
+<link rel="stylesheet" href="app.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="bar">
+  <div class="brand">insane-qwen <span class="sub">one neuron · different voice</span></div>
+  <div class="status" id="status">not connected</div>
+</header>
+
+<main>
+  <section class="card" id="login">
+    <h2>Private Tailscale connection</h2>
+    <p class="muted">Connect Tailscale with your account. No gateway token is needed.</p>
+    <button id="reconnect">Reconnect</button>
+    <p class="error" id="login-error"></p>
+  </section>
+
+  <section class="card" id="controls" hidden>
+    <div class="tabs" role="tablist">
+      <button class="tab active" data-mode="agent" role="tab">Agent in sandbox</button>
+      <button class="tab" data-mode="chat" role="tab">Chat</button>
+    </div>
+    <div class="grid">
+      <label>Model A <select id="model-a"></select></label>
+      <label>Model B <select id="model-b"></select></label>
+      <label class="agent-only">Workspace <select id="image"></select></label>
+      <label class="agent-only">Max steps <input id="steps" type="number" min="1" max="300" value="30"></label>
+    </div>
+    <p class="muted agent-only" id="image-note"></p>
+    <fieldset id="steering-note" hidden>
+      <legend>Neuron steering · zero-based positions</legend>
+      <div class="grid">
+        <label>Preset<select id="preset"><option value="discovered">Discovered (+0.6)</option><option value="lyra">Lyra · two neurons</option><option value="reverse">Reverse Lyra</option><option value="custom">Custom position</option></select></label>
+        <label>Layer<input id="layer" type="number" min="0" max="31" value="20"></label>
+        <label>Neuron<input id="neuron" type="number" min="0" max="9215" value="8888"></label>
+        <label>Operation<select id="operation"><option value="add">Add</option><option value="multiply">Multiply</option></select></label>
+        <label>Intensity<input id="intensity" type="number" step="0.05" min="-4" max="4" value="0.6"></label>
+        <label>Calibration<select id="calibration"><option value="fixed">Fixed reference</option><option value="prompt">Current prompt</option></select></label>
+      </div>
+      <p class="muted" id="recipe-summary">L20 · N8888 · add +0.6 · fixed reference. Applied to the steered model only.</p>
+    </fieldset>
+    <label class="block">Task
+      <textarea id="task" rows="5" placeholder="Describe a task. The model works in an isolated, offline sandbox with a bash tool."></textarea>
+    </label>
+    <div class="chips" id="examples"></div>
+    <div class="row actions">
+      <button id="run">Run both</button>
+      <button class="ghost" id="stop" disabled>Stop</button>
+      <button class="ghost chat-only" id="reset-chat" hidden>New chat</button>
+      <label class="check"><input id="single" type="checkbox"> only Model B</label>
+    </div>
+  </section>
+
+  <section class="columns" id="columns" hidden>
+    <article class="pane" id="pane-a">
+      <header><span class="tag before">Model A</span><span class="model"></span></header>
+      <div class="meta"><span class="state">idle</span><span class="stats"></span></div>
+      <div class="log"></div>
+    </article>
+    <article class="pane" id="pane-b">
+      <header><span class="tag after">Model B</span><span class="model"></span></header>
+      <div class="meta"><span class="state">idle</span><span class="stats"></span></div>
+      <div class="log"></div>
+    </article>
+  </section>
+
+  <section class="card" id="history" hidden>
+    <div class="row between"><h2>Past agent runs</h2><button class="ghost" id="refresh-history">Refresh</button></div>
+    <ul id="runs"></ul>
+  </section>
+</main>
+</body>
+</html>

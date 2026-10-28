@@ -1,0 +1,11 @@
+{
+  "tailscale_login": "you@example.com",
+  "origins": ["http://your-host.your-tailnet.ts.net:8090"],
+  "secrets": "/absolute/private/path/backend-secrets.json",
+  "backends": {
+    "qwen35-4b-native": "http://GPU_PRIVATE_IP:8004",
+    "qwen35-4b-steered": "http://GPU_PRIVATE_IP:8004"
+  },
+  "sandbox_pools": [],
+  "images": {}
+}

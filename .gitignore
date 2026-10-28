@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+.env
+state/
+results/
+dist/
+build/
+.DS_Store
+.build/
+Build/
+xcuserdata/
+*.mobileprovision
+*.p12
